@@ -2,83 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="main.js"></script>
     <title>JS</title>
 </head>
+
 <body>
-    <script>
-        var arrayMillion = [];
-
-        console.log("Время создания случайного массива: " + getRandomInt(0, 1000000));
-
-        console.log("Время сортировки от большего к меньшему: " + sortFromTopToBottom(arrayMillion));
-
-        console.log("Время сортировки от меньшего к большему: " + sortFromBotToTop(arrayMillion));
-
-        console.log("Время суммирования элементов массива: " + sumElementsOfArray(arrayMillion));
-
-        // Cann't build time-function. Constantly returns an error.
-       /* function time(start, end) {
-            var result = end - start;
-            return result;
-        }*/
-        //MAX-VALUE is 10000, because JS is not in the mood for stream video)
-        function getRandomInt(min, max) {
-            var startDate = new Date() * 1000;
-            for (var i = 0; i < 10000; i++) {
-                arrayMillion[i] = Math.floor(Math.random() * max);
-            }
-            var endDate = new Date() * 1000;
-            var result = endDate - startDate;
-            return result;
-            //time(startDate, endDate );
-        }
-
-        function sortFromTopToBottom(MegaArray) {
-            var n = MegaArray.length;
-            var startDate = new Date() * 1000;
-            for (var i = 0; i < n - 1; i++) {
-                for (var j = 0; j < n - 1 - i; j++) {
-                    if (MegaArray[j + 1] > MegaArray[j]) {
-                        var t = MegaArray[j];
-                        MegaArray[j] = MegaArray[j + 1];
-                        MegaArray[j + 1] = t;
-                    }
-                }
-            }
-            var endDate = new Date() * 1000;
-            var result = endDate - startDate;
-            return result;
-            //time(startDate, endDate );
-        }
-
-        function sortFromBotToTop(MegaArray) {
-            var startDate = new Date() * 1000;
-            var n = MegaArray.length;
-            for (var i = 0; i < n-1; i++){
-                for (var j = 0; j < n-1-i; j++){
-                    if (MegaArray[j+1] < MegaArray[j]){
-                        var t = MegaArray[j+1];
-                        MegaArray[j+1] = MegaArray[j];
-                        MegaArray[j] = t;
-                    }
-                }
-            }
-            var endDate = new Date() * 1000;
-            var result = endDate - startDate;
-            return result;
-            //time(startDate, endDate );
-        }
-
-        function sumElementsOfArray(MegaArray) {
-            var startDate = new Date() * 1000;
-            var resultSum = MegaArray.reduce(function(sum, current) {
-                return sum + current;
-            }, 0);
-            var endDate = new Date() * 1000;
-            var result = endDate - startDate;
-            return result;
-            //time(startDate, endDate );
-        }
-    </script>
+    <h2>Массив случайных чисел и его преобразование</h2>
+    <button type="button" onclick="Task1(this)">Нажми меня</button>
+    <h2>Транспортная задача:</h2>
+    <button type="button" onclick="Task2(this)">Нажми меня тоже</button>
+    <script src="main.js"></script>
 </body>
 </html>
